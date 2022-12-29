@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_GLOBAL_VARIABLES_H_
-#define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_GLOBAL_VARIABLES_H_
+#ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_GLOBAL_VARIABLE_H_
+#define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_GLOBAL_VARIABLE_H_
 
 #include <zircon/compiler.h>
 
@@ -20,4 +20,4 @@ extern const efi_guid GlobalVariableGuid;
 
 __END_CDECLS
 
-#endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_GLOBAL_VARIABLES_H_
+#endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_GLOBAL_VARIABLE_H_
