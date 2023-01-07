@@ -11,6 +11,10 @@
 #include <stdint.h>
 #include <zircon/compiler.h>
 
+#ifdef __cplusplus
+#include <cstring>
+#endif
+
 __BEGIN_CDECLS
 
 // Attribute to emit an error if a function is called.
@@ -204,5 +208,19 @@ typedef unsigned short char16_t;
 #endif
 
 __END_CDECLS
+
+#ifdef __cplusplus
+static_assert(sizeof(efi_guid) == 16, "Unexpected efi_guid size");
+
+inline bool operator==(const efi_guid& l, const efi_guid& r) {
+  return std::memcmp(&l, &r, sizeof(efi_guid)) == 0;
+}
+
+inline bool operator!=(const efi_guid& l, const efi_guid& r) { return !(l == r); }
+
+inline bool operator<(const efi_guid& l, const efi_guid& r) {
+  return std::memcmp(&l, &r, sizeof(efi_guid)) < 0;
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_TYPES_H_
