@@ -79,10 +79,8 @@ typedef struct efi_serial_io_protocol {
                               uint8_t DataBits, efi_stop_bits_type StopBits) EFIAPI;
   efi_status (*SetControl)(struct efi_serial_io_protocol* self, uint32_t Control) EFIAPI;
   efi_status (*GetControl)(struct efi_serial_io_protocol* self, uint32_t* Control) EFIAPI;
-  efi_status (*Write)(struct efi_serial_io_protocol* self, uint64_t* BufferSize,
-                      void* Buffer) EFIAPI;
-  efi_status (*Read)(struct efi_serial_io_protocol* self, uint64_t* BufferSize,
-                     void* Buffer) EFIAPI;
+  efi_status (*Write)(struct efi_serial_io_protocol* self, size_t* BufferSize, void* Buffer) EFIAPI;
+  efi_status (*Read)(struct efi_serial_io_protocol* self, size_t* BufferSize, void* Buffer) EFIAPI;
 
   serial_io_mode* Mode;
   const struct elf_guid* DeviceTypeGuid;  // Revision 1.1
