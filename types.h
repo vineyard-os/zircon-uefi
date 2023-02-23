@@ -33,8 +33,8 @@ __BEGIN_CDECLS
 #define EFIAPI __attribute__((ms_abi))
 #elif defined(__i386__)
 #define EFIAPI __attribute__((regparm(0)))
-#elif defined(__aarch64__)
-// ARM64 doesn't need the ABI tag
+#elif defined(__aarch64__) || defined(__riscv)
+// ARM64 doesn't need the ABI tag, likewise RISC-V.
 #define EFIAPI
 #else
 #define EFIAPI EFI_FUNCTION_UNAVAILABLE("EFI API functions undefined for this architecture.")
