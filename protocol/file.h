@@ -7,13 +7,13 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_FILE_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_FILE_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/boot-services.h>
 #include <efi/runtime-services.h>
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_FILE_PROTOCOL_REVISION 0x00010000
 #define EFI_FILE_PROTOCOL_REVISION2 0x00020000
@@ -107,6 +107,8 @@ typedef struct efi_file_protocol {
   efi_status (*FlushEx)(struct efi_file_protocol* self, efi_file_io_token* token) EFIAPI;
 } efi_file_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_FILE_H_

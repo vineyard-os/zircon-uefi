@@ -7,11 +7,11 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SERIAL_IO_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SERIAL_IO_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_SERIAL_IO_PROTOCOL_GUID                                                \
   {                                                                                \
@@ -86,6 +86,8 @@ typedef struct efi_serial_io_protocol {
   const struct elf_guid* DeviceTypeGuid;  // Revision 1.1
 } efi_serial_io_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SERIAL_IO_H_

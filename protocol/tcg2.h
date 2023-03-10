@@ -10,11 +10,12 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
-#include <zircon/compiler.h>
 
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_TCG2_PROTOCOL_GUID                                                     \
   {                                                                                \
@@ -83,6 +84,8 @@ typedef struct efi_tcg2_protocol {
                                              uint32_t* response) EFIAPI;
 } __attribute__((packed)) efi_tcg2_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_TCG2_H_

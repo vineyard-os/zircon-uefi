@@ -9,13 +9,14 @@
 
 #include <stddef.h>
 #include <stdint.h>
-#include <zircon/compiler.h>
 
 #ifdef __cplusplus
 #include <cstring>
 #endif
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 // Attribute to emit an error if a function is called.
 #if __has_attribute(unavailable)
@@ -207,7 +208,10 @@ typedef enum { TimerCancel, TimerPeriodic, TimerRelative } efi_timer_delay;
 typedef unsigned short char16_t;
 #endif
 
-__END_CDECLS
+
+#ifdef __cplusplus
+}
+#endif
 
 #ifdef __cplusplus
 static_assert(sizeof(efi_guid) == 16, "Unexpected efi_guid size");

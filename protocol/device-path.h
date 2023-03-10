@@ -7,11 +7,11 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_DEVICE_PATH_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_DEVICE_PATH_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_DEVICE_PATH_PROTOCOL_GUID                                              \
   {                                                                                \
@@ -72,6 +72,8 @@ typedef struct {
   efi_physical_addr EndAddress;
 } efi_device_path_hw_memmap;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_DEVICE_PATH_H_

@@ -7,13 +7,13 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_BLOCK_IO_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_BLOCK_IO_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/boot-services.h>
 #include <efi/runtime-services.h>
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_BLOCK_IO_PROTOCOL_GUID                                                 \
   {                                                                                \
@@ -59,6 +59,8 @@ struct efi_block_io_media {
   uint32_t OptimalTransferLengthGranularity;
 };
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_BLOCK_IO_H_

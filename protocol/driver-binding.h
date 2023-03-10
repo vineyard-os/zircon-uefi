@@ -7,12 +7,12 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_DRIVER_BINDING_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_DRIVER_BINDING_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/protocol/device-path.h>
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_DRIVER_BINDING_PROTOCOL_GUID                                           \
   {                                                                                \
@@ -35,6 +35,8 @@ typedef struct efi_driver_binding_protocol {
   efi_handle DriverBindingHandle;
 } efi_driver_binding_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_DRIVER_BINDING_H_

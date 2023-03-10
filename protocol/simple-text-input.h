@@ -7,11 +7,11 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SIMPLE_TEXT_INPUT_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SIMPLE_TEXT_INPUT_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_SIMPLE_TEXT_INPUT_PROTOCOL_GUID                                        \
   {                                                                                \
@@ -34,6 +34,8 @@ typedef struct efi_simple_text_input_protocol {
   efi_event WaitForKey;
 } efi_simple_text_input_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SIMPLE_TEXT_INPUT_H_

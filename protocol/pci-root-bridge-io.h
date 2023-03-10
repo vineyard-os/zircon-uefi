@@ -7,12 +7,12 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_PCI_ROOT_BRIDGE_IO_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_PCI_ROOT_BRIDGE_IO_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/boot-services.h>
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_GUID                                       \
   {                                                                                \
@@ -118,6 +118,8 @@ typedef struct efi_pci_root_bridge_io_protocol {
   uint32_t SegmentNumber;
 } efi_pci_root_bridge_io_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_PCI_ROOT_BRIDGE_IO_H_

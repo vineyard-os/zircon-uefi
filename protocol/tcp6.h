@@ -6,14 +6,15 @@
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_TCP6_H_
 
 #include <stdbool.h>
-#include <zircon/compiler.h>
 
 #include <efi/protocol/ip6.h>
 #include <efi/protocol/managed-network.h>
 #include <efi/protocol/simple-network.h>
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_TCP6_SERVICE_BINDING_PROTOCOL_GUID                                     \
   {                                                                                \
@@ -145,6 +146,8 @@ typedef struct efi_tcp6_protocol {
   efi_status (*Poll)(struct efi_tcp6_protocol* self) EFIAPI;
 } efi_tcp6_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_TCP6_H_

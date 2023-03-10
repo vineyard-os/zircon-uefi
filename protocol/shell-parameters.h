@@ -7,11 +7,11 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SHELL_PARAMETERS_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SHELL_PARAMETERS_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_SHELL_PARAMETERS_PROTOCOL_GUID                                         \
   {                                                                                \
@@ -28,6 +28,8 @@ typedef struct {
 
 extern const efi_guid ShellParametersProtocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SHELL_PARAMETERS_H_

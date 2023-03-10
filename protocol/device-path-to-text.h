@@ -8,12 +8,13 @@
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_DEVICE_PATH_TO_TEXT_H_
 
 #include <stdbool.h>
-#include <zircon/compiler.h>
 
 #include <efi/protocol/device-path.h>
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_DEVICE_PATH_TO_TEXT_PROTOCOL_GUID                                      \
   {                                                                                \
@@ -29,6 +30,8 @@ typedef struct efi_device_path_to_text_protocol {
                                        bool allow_shortcuts)EFIAPI;
 } efi_device_path_to_text_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_DEVICE_PATH_TO_TEXT_H_

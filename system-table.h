@@ -8,7 +8,6 @@
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_SYSTEM_TABLE_H_
 
 #include <stdint.h>
-#include <zircon/compiler.h>
 
 #include <efi/boot-services.h>
 #include <efi/protocol/simple-text-input.h>
@@ -16,7 +15,9 @@
 #include <efi/runtime-services.h>
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_SYSTEM_TABLE_SIGNATURE 0x5453595320494249
 #define EFI_2_60_SYSTEM_TABLE_REVISION ((2 << 16) | (60))
@@ -53,6 +54,8 @@ typedef struct efi_system_table {
   const efi_configuration_table* ConfigurationTable;
 } efi_system_table;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_SYSTEM_TABLE_H_

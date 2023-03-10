@@ -7,11 +7,11 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_GRAPHICS_OUTPUT_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_GRAPHICS_OUTPUT_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID                                          \
   {                                                                                \
@@ -81,6 +81,8 @@ typedef struct efi_graphics_output_protocol {
   efi_graphics_output_mode* Mode;
 } efi_graphics_output_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_GRAPHICS_OUTPUT_H_

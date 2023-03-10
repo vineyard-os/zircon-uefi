@@ -8,7 +8,6 @@
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_BOOT_SERVICES_H_
 
 #include <stdbool.h>
-#include <zircon/compiler.h>
 
 #include <efi/protocol/device-path.h>
 #include <efi/types.h>
@@ -16,7 +15,9 @@
 #define EFI_BOOT_SERVICES_SIGNATURE 0x56524553544f4f42
 #define EFI_BOOT_SERVICES_REVISION EFI_SPECIFICATION_VERSION
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 typedef size_t efi_tpl;
 
@@ -203,6 +204,8 @@ typedef struct {
                               efi_event* event) EFIAPI;
 } efi_boot_services;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_BOOT_SERVICES_H_

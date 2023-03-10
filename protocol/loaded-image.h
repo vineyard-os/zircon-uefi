@@ -7,13 +7,13 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_LOADED_IMAGE_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_LOADED_IMAGE_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/protocol/device-path.h>
 #include <efi/system-table.h>
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_LOADED_IMAGE_PROTOCOL_GUID                                             \
   {                                                                                \
@@ -40,6 +40,8 @@ typedef struct {
   efi_status (*Unload)(efi_handle img) EFIAPI;
 } efi_loaded_image_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_LOADED_IMAGE_H_

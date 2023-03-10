@@ -7,11 +7,11 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_USB_IO_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_USB_IO_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_USB_IO_PROTOCOL_GUID                                                   \
   {                                                                                \
@@ -140,6 +140,8 @@ typedef struct efi_usb_io_protocol {
   efi_status (*UsbPortReset)(struct efi_usb_io_protocol* self) EFIAPI;
 } efi_usb_io_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_USB_IO_H_

@@ -8,11 +8,12 @@
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SIMPLE_NETWORK_H_
 
 #include <stdbool.h>
-#include <zircon/compiler.h>
 
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_SIMPLE_NETWORK_PROTOCOL_GUID                                           \
   {                                                                                \
@@ -137,6 +138,8 @@ typedef struct efi_simple_network_protocol {
   efi_simple_network_mode* Mode;
 } efi_simple_network_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SIMPLE_NETWORK_H_

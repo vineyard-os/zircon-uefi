@@ -5,11 +5,11 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_GLOBAL_VARIABLE_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_GLOBAL_VARIABLE_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define EFI_GLOBAL_VARIABLE                                                        \
   {                                                                                \
@@ -18,6 +18,8 @@ __BEGIN_CDECLS
 
 extern const efi_guid GlobalVariableGuid;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_GLOBAL_VARIABLE_H_

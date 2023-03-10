@@ -5,11 +5,11 @@
 #ifndef ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SERVICE_BINDING_H_
 #define ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SERVICE_BINDING_H_
 
-#include <zircon/compiler.h>
-
 #include <efi/types.h>
 
-__BEGIN_CDECLS
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 typedef struct efi_service_binding_protocol {
   efi_status (*CreateChild)(struct efi_service_binding_protocol* self,
@@ -19,6 +19,8 @@ typedef struct efi_service_binding_protocol {
                              efi_handle child_handle) EFIAPI;
 } efi_service_binding_protocol;
 
-__END_CDECLS
+#ifdef __cplusplus
+}
+#endif
 
 #endif  // ZIRCON_KERNEL_LIB_EFI_INCLUDE_EFI_PROTOCOL_SERVICE_BINDING_H_
